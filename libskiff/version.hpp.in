@@ -6,7 +6,7 @@
 #define @PROJECT_NAME_UPPERCASE@_PATCH_VERSION (@PATCH_VERSION@)
 #define @PROJECT_NAME_UPPERCASE@_VERSION "@PROJECT_VERSION@"
 
-#include "types.hpp"
+#include <libskiff/types.hpp>
 
 namespace libskiff {
 namespace version {
