@@ -1,7 +1,7 @@
 #ifndef LIBSKIFF_INSTRUCTION_GENERATOR_HPP
 #define LIBSKIFF_INSTRUCTION_GENERATOR_HPP
 
-#include "bytecode/instructions.hpp"
+#include <libskiff/bytecode/instructions.hpp>
 
 #include <cstdint>
 #include <optional>

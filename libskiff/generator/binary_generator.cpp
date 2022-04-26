@@ -1,6 +1,6 @@
-#include "generator/binary_generator.hpp"
-#include "bytecode/helpers.hpp"
-#include "version.hpp"
+#include <libskiff/generator/binary_generator.hpp>
+#include <libskiff/bytecode/helpers.hpp>
+#include <libskiff/version.hpp>
 
 namespace libskiff {
 namespace generator {

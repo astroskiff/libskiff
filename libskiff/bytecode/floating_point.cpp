@@ -1,4 +1,4 @@
-#include "bytecode/floating_point.hpp"
+#include <libskiff/bytecode/floating_point.hpp>
 #include <cmath>
 
 namespace libskiff {

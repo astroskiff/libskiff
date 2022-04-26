@@ -30,8 +30,8 @@ install(TARGETS ${LIBRARY_NAME}
 
 # Create 'version.h'
 configure_file(libskiff/version.hpp.in
-  "${CMAKE_CURRENT_BINARY_DIR}/version.hpp" @ONLY)
-set(HEADERS ${HEADERS} ${CMAKE_CURRENT_BINARY_DIR}/version.hpp)
+  "${CMAKE_SOURCE_DIR}/libskiff/version.hpp" @ONLY)
+set(HEADERS ${HEADERS} ${CMAKE_SOURCE_DIR}/libskiff/version.hpp)
 
 # Install headers
 #install(FILES ${HEADERS}

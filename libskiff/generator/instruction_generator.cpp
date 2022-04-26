@@ -1,7 +1,7 @@
-#include "generator/instruction_generator.hpp"
-#include "bytecode/floating_point.hpp"
-#include "bytecode/helpers.hpp"
-#include "bytecode/instructions.hpp"
+#include <libskiff/generator/instruction_generator.hpp>
+#include <libskiff/bytecode/floating_point.hpp>
+#include <libskiff/bytecode/helpers.hpp>
+#include <libskiff/bytecode/instructions.hpp>
 
 #include <limits>
 

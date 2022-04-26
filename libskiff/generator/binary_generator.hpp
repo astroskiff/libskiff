@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <vector>
 
-#include "types.hpp"
+#include <libskiff/types.hpp>
 
 namespace libskiff {
 namespace generator {

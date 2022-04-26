@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "types.hpp"
+#include <libskiff/types.hpp>
 
 #include <iostream>
 

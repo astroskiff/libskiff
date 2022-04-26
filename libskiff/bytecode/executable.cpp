@@ -1,6 +1,6 @@
-#include "bytecode/executable.hpp"
-#include "bytecode/helpers.hpp"
-#include "types.hpp"
+#include <libskiff/bytecode/executable.hpp>
+#include <libskiff/bytecode/helpers.hpp>
+#include <libskiff/types.hpp>
 
 #include <filesystem>
 #include <fstream>
