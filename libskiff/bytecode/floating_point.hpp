@@ -38,9 +38,7 @@ extern double from_uint64_t(const uint64_t value);
 //! \param lhs Left hand operand
 //! \param rhs Right hand operand
 //! \returns true iff lhs and rhs are equal within given precision
-//! \note Uses a precision of 0.00001 as default
-extern bool are_equal(const double lhs, const double rhs,
-                      const double precision = 0.00001);
+extern bool are_equal(const double lhs, const double rhs);
 
 } // namespace floating_point
 } // namespace bytecode

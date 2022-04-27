@@ -52,9 +52,9 @@ double construct(const struct deconstructed_t dd)
   return d;
 }
 
-bool are_equal(const double lhs, const double rhs, double precision)
+bool are_equal(const double lhs, const double rhs)
 {
-  return std::fabs(lhs - rhs) < precision;
+  return std::fabs(lhs - rhs) <= 0.5e-14 * std::fabs(lhs);
 }
 
 uint64_t to_uint64_t(const double value)
