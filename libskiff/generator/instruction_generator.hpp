@@ -186,6 +186,9 @@ public:
   //! \brief Generate push word instruction
   std::vector<uint8_t> gen_push_w(const uint8_t source);
 
+  //! \brief Generate push half word instruction
+  std::vector<uint8_t> gen_push_hw(const uint8_t source);
+
   //! \brief Generate push double word instruction
   std::vector<uint8_t> gen_push_dw(const uint8_t source);
 
@@ -194,6 +197,9 @@ public:
 
   //! \brief Generate pop word instruction
   std::vector<uint8_t> gen_pop_w(const uint8_t dest);
+
+  //! \brief Generate pop half word instruction
+  std::vector<uint8_t> gen_pop_hw(const uint8_t dest);
 
   //! \brief Generate pop double word instruction
   std::vector<uint8_t> gen_pop_dw(const uint8_t dest);
@@ -211,6 +217,10 @@ public:
   std::vector<uint8_t> gen_store_word(const uint8_t idx, const uint8_t offset,
                                       const uint8_t data);
 
+  //! \brief Generate shw instruction
+  std::vector<uint8_t> gen_store_hword(const uint8_t idx, const uint8_t offset,
+                                      const uint8_t data);
+
   //! \brief Generate sdw instruction
   std::vector<uint8_t> gen_store_dword(const uint8_t idx, const uint8_t offset,
                                        const uint8_t data);
@@ -221,6 +231,10 @@ public:
 
   //! \brief Generate lw instruction
   std::vector<uint8_t> gen_load_word(const uint8_t idx, const uint8_t offset,
+                                     const uint8_t dest);
+
+  //! \brief Generate lhw instruction
+  std::vector<uint8_t> gen_load_hword(const uint8_t idx, const uint8_t offset,
                                      const uint8_t dest);
 
   //! \brief Generate ldw instruction

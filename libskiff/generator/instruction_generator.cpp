@@ -437,6 +437,11 @@ std::vector<uint8_t> instruction_generator_c::gen_push_w(const uint8_t source)
   return do_generate_stack(libskiff::bytecode::instructions::PUSH_W, source);
 }
 
+std::vector<uint8_t> instruction_generator_c::gen_push_hw(const uint8_t source)
+{
+  return do_generate_stack(libskiff::bytecode::instructions::PUSH_HW, source);
+}
+
 std::vector<uint8_t> instruction_generator_c::gen_push_dw(const uint8_t source)
 {
   return do_generate_stack(libskiff::bytecode::instructions::PUSH_DW, source);
@@ -450,6 +455,11 @@ std::vector<uint8_t> instruction_generator_c::gen_push_qw(const uint8_t source)
 std::vector<uint8_t> instruction_generator_c::gen_pop_w(const uint8_t dest)
 {
   return do_generate_stack(libskiff::bytecode::instructions::POP_W, dest);
+}
+
+std::vector<uint8_t> instruction_generator_c::gen_pop_hw(const uint8_t dest)
+{
+  return do_generate_stack(libskiff::bytecode::instructions::POP_HW, dest);
 }
 
 std::vector<uint8_t> instruction_generator_c::gen_pop_dw(const uint8_t dest)
@@ -503,6 +513,13 @@ std::vector<uint8_t> instruction_generator_c::gen_store_dword(
                                 offset, data);
 }
 
+std::vector<uint8_t> instruction_generator_c::gen_store_hword(
+    const uint8_t idx, const uint8_t offset, const uint8_t data)
+{
+  return do_generate_load_store(libskiff::bytecode::instructions::SHW, idx,
+                                offset, data);
+}
+
 std::vector<uint8_t> instruction_generator_c::gen_store_qword(
     const uint8_t idx, const uint8_t offset, const uint8_t data)
 {
@@ -523,6 +540,14 @@ instruction_generator_c::gen_load_dword(const uint8_t idx, const uint8_t offset,
                                         const uint8_t dest)
 {
   return do_generate_load_store(libskiff::bytecode::instructions::LDW, idx,
+                                offset, dest);
+}
+
+std::vector<uint8_t>
+instruction_generator_c::gen_load_hword(const uint8_t idx, const uint8_t offset,
+                                        const uint8_t dest)
+{
+  return do_generate_load_store(libskiff::bytecode::instructions::LHW, idx,
                                 offset, dest);
 }
 

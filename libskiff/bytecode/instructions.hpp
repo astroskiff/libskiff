@@ -55,6 +55,11 @@ constexpr uint8_t DEBUG = 0x2B;
 constexpr uint8_t EIRQ = 0x2C;
 constexpr uint8_t DIRQ = 0x2D;
 
+constexpr uint8_t PUSH_HW = 0x2E;
+constexpr uint8_t POP_HW = 0x2F;
+constexpr uint8_t SHW = 0x30;
+constexpr uint8_t LHW = 0x31;
+
 //! \brief Retrieve the map that details the size of each instruction in bytes
 static inline std::unordered_map<uint8_t, uint8_t> get_instruction_to_size_map()
 {
@@ -103,7 +108,11 @@ static inline std::unordered_map<uint8_t, uint8_t> get_instruction_to_size_map()
           {libskiff::bytecode::instructions::SYSCALL, 9},
           {libskiff::bytecode::instructions::DEBUG, 9},
           {libskiff::bytecode::instructions::EIRQ, 1},
-          {libskiff::bytecode::instructions::DIRQ, 1}};
+          {libskiff::bytecode::instructions::DIRQ, 1},
+          {libskiff::bytecode::instructions::PUSH_HW, 2},
+          {libskiff::bytecode::instructions::POP_HW, 2},
+          {libskiff::bytecode::instructions::SHW, 4},
+          {libskiff::bytecode::instructions::LHW, 4}};
 }
 
 } // namespace instructions
