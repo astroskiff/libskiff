@@ -726,9 +726,11 @@ TEST(instruction_generator_tests, instruction_stack_pushpop)
 {
   for (auto &ins : {
            libskiff::bytecode::instructions::PUSH_W,
+           libskiff::bytecode::instructions::PUSH_HW,
            libskiff::bytecode::instructions::PUSH_DW,
            libskiff::bytecode::instructions::PUSH_QW,
            libskiff::bytecode::instructions::POP_W,
+           libskiff::bytecode::instructions::POP_HW,
            libskiff::bytecode::instructions::POP_DW,
            libskiff::bytecode::instructions::POP_QW,
 
@@ -757,6 +759,9 @@ TEST(instruction_generator_tests, instruction_stack_pushpop)
     case libskiff::bytecode::instructions::PUSH_W:
       bytes = gen.gen_push_w(reg.value);
       break;
+    case libskiff::bytecode::instructions::PUSH_HW:
+      bytes = gen.gen_push_hw(reg.value);
+      break;
     case libskiff::bytecode::instructions::PUSH_DW:
       bytes = gen.gen_push_dw(reg.value);
       break;
@@ -765,6 +770,9 @@ TEST(instruction_generator_tests, instruction_stack_pushpop)
       break;
     case libskiff::bytecode::instructions::POP_W:
       bytes = gen.gen_pop_w(reg.value);
+      break;
+    case libskiff::bytecode::instructions::POP_HW:
+      bytes = gen.gen_pop_hw(reg.value);
       break;
     case libskiff::bytecode::instructions::POP_DW:
       bytes = gen.gen_pop_dw(reg.value);
@@ -836,9 +844,11 @@ TEST(instruction_generator_tests, instructions_load_store)
 {
   for (auto &ins : {
            libskiff::bytecode::instructions::SW,
+           libskiff::bytecode::instructions::SHW,
            libskiff::bytecode::instructions::SDW,
            libskiff::bytecode::instructions::SQW,
            libskiff::bytecode::instructions::LW,
+           libskiff::bytecode::instructions::LHW,
            libskiff::bytecode::instructions::LDW,
            libskiff::bytecode::instructions::LQW,
 
@@ -875,6 +885,9 @@ TEST(instruction_generator_tests, instructions_load_store)
     case libskiff::bytecode::instructions::SW:
       bytes = gen.gen_store_word(idx.value, offset.value, data.value);
       break;
+    case libskiff::bytecode::instructions::SHW:
+      bytes = gen.gen_store_hword(idx.value, offset.value, data.value);
+      break;
     case libskiff::bytecode::instructions::SDW:
       bytes = gen.gen_store_dword(idx.value, offset.value, data.value);
       break;
@@ -883,6 +896,9 @@ TEST(instruction_generator_tests, instructions_load_store)
       break;
     case libskiff::bytecode::instructions::LW:
       bytes = gen.gen_load_word(idx.value, offset.value, data.value);
+      break;
+    case libskiff::bytecode::instructions::LHW:
+      bytes = gen.gen_load_hword(idx.value, offset.value, data.value);
       break;
     case libskiff::bytecode::instructions::LDW:
       bytes = gen.gen_load_dword(idx.value, offset.value, data.value);
